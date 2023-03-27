@@ -16,10 +16,13 @@ public class Main {
         }
         for (int i = userArray.length - 1; i >= 0; i--) {
             if (userArray[i] % 2 == 0) {
-                System.out.println(userArray[i] + " is even number. Is it greater than 10: " + (userArray[i] > 10));
+                System.out.println(userArray[i] + " is even number");
             } else {
-                System.out.println(userArray[i] + " is odd number. Is it greater than 10: " + (userArray[i] > 10));
-            } // napraviti bolji ispis za broj>10
+                System.out.println(userArray[i] + " is odd number.");
+            }
+            if (userArray[i] > 10) {
+                System.out.println(userArray[i] + " is greater than 10.");
+            }
         }
 
             // 2. zadatak
@@ -68,16 +71,20 @@ public class Main {
             System.out.println(enteredArray[i]);
             }
 
-            // 4. Zadatak
-        Scanner input = new Scanner(System.in);
+            // 4. zadatak
+      /*  Scanner input = new Scanner(System.in);
         System.out.println("Write a word you want to check: ");
         String word = input.nextLine();
         char[] wordChars = word.toCharArray();
-        for (int i = wordChars.length - 1; i >= 0; i--) {
-            System.out.println(wordChars[i]); //probati dodati ispis da je rijec palindrom
-        }
+        for (int i = wordChars.length - 1; i >= 0; i--)
+            for (int j = 0; j < wordChars.length; i++)
+                if (wordChars[i] == wordChars[j]) {
+            System.out.println(word + " is palindrome.");
+                 } else {
+                    System.out.println(word + " is not palindrome.");
+                        } //ispise tacno ali se srusi ArrayIndexOutOfBoundsException why ?? */
 
-            // 5. Zadatak
+            // 5. zadatak
         Scanner range = new Scanner(System.in);
         System.out.println("Please enter lower number in range: ");
         int lowNumber = range.nextInt();
@@ -86,13 +93,13 @@ public class Main {
         int[] numbersArray = new int[largeNumber - lowNumber];
         for (int i = 1; i < numbersArray.length; i++) {
             numbersArray[i] = lowNumber + i;
-        }
+            }
         for (int i = 1; i < numbersArray.length; i++)
             if (numbersArray[i] % 2 == 0) {
                 System.out.println("Even numbers for range: " + lowNumber + " to " + largeNumber + " are: " + numbersArray[i]);
-            } // probati ispisat u istoj ln 26min u videu myb
+            }
 
-            // 6. Zadatak
+            // 6. zadatak
         String[] randomArray = {"Hello", "this", "is"};
         String[] randomSecondArray = {"my", "random"};
         String[] randomThirdArray = {"array", "Bye"};
@@ -109,7 +116,7 @@ public class Main {
             }
         System.out.println(Arrays.toString(overallArray));
 
-            // 7. Zadatak
+            // 7. zadatak
         int [] numArr1 = {2, 3, 4};
         int [] numArr2 = {8, 7, 4, 3, 2};
         int [] numArrSum = new int [Math.max(numArr1.length, numArr2.length)];
@@ -126,17 +133,11 @@ public class Main {
             System.out.println(numArrSum[i]);
         }
 
-     /*       // 8. Zadatak
-        String[] stringArr = {"This", "strings", "are", "gone"};
-        ArrayList<String> out = new ArrayList<>();
-
-        for (String wordToAvoid : stringArr) {
-            if (!wordToAvoid.toLowerCase().contains("e")) {
-                out.add(wordToAvoid);
-            }
-        }
-        String[] excludedElement = out.toArray(new String[0]);
-        System.out.println(Arrays.toString(stringArr)); // nedovrseno - ne radi */
+            // 8. Zadatak
+     /*   String[] stringArr = {"This", "strings", "are", "gone"};
+        char [] vowel = {'a', 'e', 'i', 'o', 'u'};
+        for (int i = 0; i < stringArr.length; i++)
+            if (stringArr[i].contains(vowel) = false) */ // couldn't solve :(
 
             // 9. Zadatak
         int [] arrToSum1 = {1, 2, 3};
