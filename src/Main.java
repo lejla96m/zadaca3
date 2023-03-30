@@ -1,14 +1,18 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
             // 1. zadatak
+        System.out.println("    1st Assignment");
+
         Scanner reader = new Scanner(System.in);
+
         System.out.println("How many elements will contain your array?");
+
         int index = reader.nextInt();
         int[] userArray = new int[index];
+
         for (int i = 0; i < userArray.length; i++) {
             System.out.println("Enter the number");
             int userNumber = reader.nextInt();
@@ -26,126 +30,177 @@ public class Main {
         }
 
             // 2. zadatak
-        int[] yourArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        for (int i = 0; i < 1; i++) {
-            System.out.println("First number in array: " + yourArray[i]);
-            if (i + 1 < yourArray.length) {
-                System.out.println("Second number in array: " + yourArray[i + 1]);
+        System.out.println("\n" + "    2nd Assignment");
+
+        int[] yourNumberArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        String[] positionOfNumber = {"First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eight", "Ninth", "Tenth", "Eleventh", "Twelfth", "Fourteenth", "Fifteenth"};
+
+        for (int i = 0; i < yourNumberArray.length; i++)
+            for (int j = 0; j < positionOfNumber.length; j++) {
+                if (i == j)
+                    System.out.println(positionOfNumber[j] + " number in array: " + yourNumberArray[i]);
             }
-            if (i + 2 < yourArray.length) {
-                System.out.println("Third number in array: " + yourArray[i + 2]);
-            }
-            if (i + 3 < yourArray.length) {
-                System.out.println("Fourth number in array: " + yourArray[i + 3]);
-            }
-            if (i + 4 < yourArray.length) {
-                System.out.println("Fifth number in array: " + yourArray[i + 4]);
-            }
-            if (i + 5 < yourArray.length) {
-                System.out.println("Sixth number in array: " + yourArray[i + 5]);
-            }
-            if (i + 6 < yourArray.length) {
-                System.out.println("Seventh number in array: " + yourArray[i + 6]);
-            }
-            if (i + 7 < yourArray.length) {
-                System.out.println("Eight number in array: " + yourArray[i + 7]);
-            }
-            if (i + 8 < yourArray.length) {
-                System.out.println("Ninth number in array: " + yourArray[i + 8]);
-            }
-            if (i + 9 < yourArray.length) {
-                System.out.println("Tenth number in array: " + yourArray[i + 9]);
-            }
-        }  // da se koristi do 15 elemenata u nizu ??
 
             // 3. zadatak
+        System.out.println("\n" + "    3rd Assignment");
+
         System.out.println("Enter the number of elements in the array: ");
+
         int element = reader.nextInt();
         int[] enteredArray = new int[element];
+
         for (int i = 0; i < enteredArray.length; i++) {
             System.out.println("Enter the number you want to be in the array: ");
+
             int entry = reader.nextInt();
             enteredArray[i] = entry;
-            }
+        }
         for (int i = enteredArray.length - 1; i >= 0; i--) {
-            System.out.println(enteredArray[i]);
-            }
+            System.out.print(enteredArray[i] + " ");
+        }
 
             // 4. zadatak
-      /*  Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("\n" + "    4th Assignment");
+
         System.out.println("Write a word you want to check: ");
-        String word = input.nextLine();
+        String word = input.nextLine().toLowerCase();
         char[] wordChars = word.toCharArray();
-        for (int i = wordChars.length - 1; i >= 0; i--)
-            for (int j = 0; j < wordChars.length; i++)
-                if (wordChars[i] == wordChars[j]) {
-            System.out.println(word + " is palindrome.");
-                 } else {
-                    System.out.println(word + " is not palindrome.");
-                        } //ispise tacno ali se srusi ArrayIndexOutOfBoundsException why ?? */
+
+        boolean palindrome = true;
+        for (int i = 0; i < wordChars.length / 2; i++)
+            if (wordChars[i] != wordChars[wordChars.length - 1 - i]) {
+                    palindrome = false;
+                    break;
+                }
+
+        if (palindrome) {
+            System.out.println(word + " is a palindrome.");
+        } else {
+            System.out.println(word + " is not a palindrome.");
+        }
 
             // 5. zadatak
+        System.out.println("\n" + "    5th Assignment");
+
         Scanner range = new Scanner(System.in);
-        System.out.println("Please enter lower number in range: ");
+
+        System.out.println("Please enter the lowest number in the range: ");
         int lowNumber = range.nextInt();
-        System.out.println("Please enter larger number in range: ");
-        int largeNumber = range.nextInt();
-        int[] numbersArray = new int[largeNumber - lowNumber];
+
+        System.out.println("Please enter the highest number in the range: ");
+        int highNumber = range.nextInt();
+
+        int[] numbersArray = new int[highNumber - lowNumber];
+
         for (int i = 1; i < numbersArray.length; i++) {
             numbersArray[i] = lowNumber + i;
-            }
+        }
+
+        String numbersDivisibleByTwoOutput = "Even numbers for the range are: ";
+
         for (int i = 1; i < numbersArray.length; i++)
             if (numbersArray[i] % 2 == 0) {
-                System.out.println("Even numbers for range: " + lowNumber + " to " + largeNumber + " are: " + numbersArray[i]);
+                numbersDivisibleByTwoOutput += numbersArray[i] + " ";
             }
+        System.out.println(numbersDivisibleByTwoOutput);
 
             // 6. zadatak
+        System.out.println("\n" + "    6th Assignment");
+
         String[] randomArray = {"Hello", "this", "is"};
         String[] randomSecondArray = {"my", "random"};
         String[] randomThirdArray = {"array", "Bye"};
+
         String[] overallArray = new String[randomArray.length + randomSecondArray.length + randomThirdArray.length];
-        int position = 0;
-        for (String strElement : randomArray) {
-                overallArray[position++] = strElement;
-            }
-        for (String strElement : randomSecondArray) {
-                overallArray[position++] = strElement;
-            }
-        for (String strElement : randomThirdArray) {
-                overallArray[position++] = strElement;
-            }
+
+        int positionOfElement = 0;
+        for (String stringElement : randomArray) {
+            overallArray[positionOfElement++] = stringElement;
+        }
+        for (String stringElement : randomSecondArray) {
+            overallArray[positionOfElement++] = stringElement;
+        }
+        for (String stringElement : randomThirdArray) {
+            overallArray[positionOfElement++] = stringElement;
+        }
+
         System.out.println(Arrays.toString(overallArray));
 
             // 7. zadatak
-        int [] numArr1 = {2, 3, 4};
-        int [] numArr2 = {8, 7, 4, 3, 2};
-        int [] numArrSum = new int [Math.max(numArr1.length, numArr2.length)];
-        for (int i = 0; i < numArrSum.length; i++) {
-            if (i < numArr1.length && i < numArr2.length) {
-                numArrSum[i] = numArr1[i] + numArr2[i];
-            } else if (i < numArr1.length) {
-                numArrSum[i] = numArr1[i];
+        System.out.println("\n" + "    7th Assignment");
+
+        int[] numArray1 = {2, 3, 4};
+        int[] numArray2 = {8, 7, 4, 3, 2};
+
+        int largerArray;
+
+        if (numArray1.length > numArray2.length) {
+            largerArray = numArray1.length;
+        } else {
+            largerArray = numArray2.length;
+        }
+
+        int [] numArraySum = new int[largerArray];
+
+        for (int i = 0; i < numArraySum.length; i++) {
+            if (i < numArray1.length && i < numArray2.length) {
+                numArraySum[i] = numArray1[i] + numArray2[i];
+            } else if (i < numArray1.length) {
+                numArraySum[i] = numArray1[i];
             } else {
-                numArrSum[i] = numArr2[i];
+                numArraySum[i] = numArray2[i];
             }
         }
-        for (int i = 0; i < numArrSum.length; i++) {
-            System.out.println(numArrSum[i]);
-        }
+        System.out.println(Arrays.toString(numArraySum));
+
 
             // 8. Zadatak
-     /*   String[] stringArr = {"This", "strings", "are", "gone"};
-        char [] vowel = {'a', 'e', 'i', 'o', 'u'};
-        for (int i = 0; i < stringArr.length; i++)
-            if (stringArr[i].contains(vowel) = false) */ // couldn't solve :(
+        System.out.println("\n" + "    8th Assignment");
+
+        String[] stringArray = {"www", "hygge", "try", "lol"};
+        String [] wordsWithVowel = new String[stringArray.length];
+
+        int numWordsWithVowel = 0;
+
+        for (int i = 0; i < stringArray.length; i++) {
+            boolean containsVowel = false;
+            for (int j = 0; j < stringArray[i].length(); j++) {
+                char stringChar = stringArray[i].charAt(j);
+                if (stringChar == 'a' || stringChar == 'e' || stringChar == 'i' || stringChar == 'o' || stringChar == 'u') {
+                    containsVowel = true;
+                    break;
+                }
+            }
+            if (containsVowel) {
+                wordsWithVowel[numWordsWithVowel] = stringArray[i];
+                numWordsWithVowel++;
+            }
+        }
+        for (int i = 0; i < stringArray.length; i++) {
+            boolean isFiltered = false;
+            for (int j = 0; j < numWordsWithVowel; j++) {
+                if (stringArray[i].equals(wordsWithVowel[j])) {
+                    isFiltered = true;
+                    break;
+                }
+            }
+            if (!isFiltered) {
+                System.out.print(stringArray[i] + " ");
+            }
+        }
 
             // 9. Zadatak
-        int [] arrToSum1 = {1, 2, 3};
-        int [] arrToSum2 = {1,1,1};
+        System.out.println("\n" + "    9th Assignment");
+
+        int [] arrayToSum1 = {1, 2, 3};
+        int [] arrayToSum2 = {1, 1, 1};
+
         int sumOfElements = 0;
-        for (int i = 0; i < arrToSum1.length; i++) {
-            for (int j = 0; j < arrToSum2.length; j++) {
-                sumOfElements += arrToSum1[i] + arrToSum2[j];
+        for (int i = 0; i < arrayToSum1.length; i++) {
+            for (int j = 0; j < arrayToSum2.length; j++) {
+                sumOfElements += arrayToSum1[i] + arrayToSum2[j];
             }
         }
         System.out.println("Total sum of two arrays is: " + sumOfElements);
